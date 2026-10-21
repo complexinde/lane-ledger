@@ -1,3 +1,5 @@
+> Current frontend candidate: revision003, official genlayer-js1.1.8, 128 frontend tests/25 actual contract SDK tests. New independent peer/publication/live validation pending at local freeze. Revision002 is superseded after a reproduced SDK fallback replay risk;003 adds a per-act one-shot wallet gate. See FRONTEND_REVISION_003.md. The original package README below and its old test counts/closed peer/publication nulls are historical, not current frontend or deployment conclusions.
+
 # LaneLedger
 
 Partition a declared half-open interval program into the minimum number of simultaneous lanes, with a matching overlap lower-bound witness.

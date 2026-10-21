@@ -1,8 +1,18 @@
 {
-  "constructor_args": [],
-  "address": null,
-  "transaction_hash": null,
-  "publication": null,
-  "hosting_url": null,
-  "live_business_flow": null
+  "profileSeq": 7,
+  "title": "LaneLedger",
+  "network": "GenLayer Studio",
+  "chainId": 61999,
+  "contractAddress": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+  "constructorTransactionHash": "0x8a352fbb3fbcda63f64d39dfe9d8384646217a0a51dd0dd0400048d5e42a97f1",
+  "ownerWallet": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+  "sourceSha256": "48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8",
+  "constructorStatus": "FINALIZED",
+  "constructorExecutionMode": "NORMAL",
+  "constructorExecutionResult": "SUCCESS",
+  "constructorConsensus": "MAJORITY_AGREE",
+  "constructorValue": 0,
+  "sourceReadbackVerified": true,
+  "scope": "Constructor only; frontend business lifecycle not yet verified",
+  "fixtureCommit": "b86c0378d66885642ed4348c5f42fa25a640817a"
 }
