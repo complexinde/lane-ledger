@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "public_url": null,
+  "publication": null,
+  "sources": {
+    "program.json": {
+      "bytes": 373,
+      "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+      "test_url": "https://raw.githubusercontent.com/example/synthetic-fixtures/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/profile07/projects/lane-ledger/fixtures/program.json",
+      "public_url": null
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "lane-ledger",
+  "title": "LaneLedger",
+  "profile": "07",
+  "kind": "Project",
+  "status": "local_complete_independently_reviewed_not_live",
+  "contract": "contract.py",
+  "contract_sha256": "48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8",
+  "constructor_args": [],
+  "counted_as_independent_ic": false,
+  "local_sdk_tests": 25,
+  "local_frontend_tests": 58,
+  "ai_assisted": true,
+  "synthetic_fixtures": {
+    "program.json": {
+      "bytes": 373,
+      "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+      "test_url": "https://raw.githubusercontent.com/example/synthetic-fixtures/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/profile07/projects/lane-ledger/fixtures/program.json",
+      "public_url": null
+    }
+  },
+  "network": {
+    "name": "Studio",
+    "chain_id": 61999
+  },
+  "deployment": null,
+  "publication": null,
+  "hosting": null,
+  "live_wallet_business_flow": null,
+  "actual_users": null,
+  "financing": null,
+  "awards": null,
+  "visual_browser_review": null,
+  "description": "Partition a declared half-open interval program into the minimum number of simultaneous lanes, with a matching overlap lower-bound witness.",
+  "shared_infrastructure_only": [
+    "Exact SDK test compatibility and semantic/schema runner",
+    "Reviewed MetaMask/raw receipt and context guard infrastructure"
+  ],
+  "independent_review": {
+    "status": "independent_read_only_local_review_closed_no_important_findings",
+    "reviewer": "/root/genlayer_projects05",
+    "recorded_by": "/root/genlayer_contract_pair02",
+    "full_suite_rerun_by_reviewer": false
+  }
+}

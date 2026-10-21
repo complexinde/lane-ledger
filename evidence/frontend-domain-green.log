@@ -1,0 +1,14 @@
+$ vitest run
+
+ RUN  v3.2.4 C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile07/projects/lane-ledger/frontend
+
+ ✓ tests/context.test.ts (4 tests) 11ms
+ ✓ tests/public-json.test.ts (2 tests) 14ms
+ ✓ tests/domain.test.ts (11 tests) 24ms
+ ✓ tests/wallet.test.ts (38 tests) 53ms
+
+ Test Files  4 passed (4)
+      Tests  55 passed (55)
+   Start at  07:12:36
+   Duration  2.95s (transform 464ms, setup 0ms, collect 2.07s, tests 102ms, environment 3ms, prepare 2.76s)
+

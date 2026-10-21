@@ -1,0 +1,16 @@
+$ vitest run
+
+ RUN  v3.2.4 C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile07/projects/lane-ledger/frontend
+
+ ✓ tests/public-json.test.ts (2 tests) 11ms
+ ✓ tests/context.test.ts (4 tests) 13ms
+ ✓ tests/domain.test.ts (11 tests) 23ms
+ ✓ tests/wallet.test.ts (38 tests) 42ms
+ ✓ tests/ui-race.test.ts (3 tests) 1136ms
+   ✓ actual page disables every configuration input while loading and discards delayed A after visible ID B  1098ms
+
+ Test Files  5 passed (5)
+      Tests  58 passed (58)
+   Start at  07:17:34
+   Duration  2.86s (transform 606ms, setup 0ms, collect 1.79s, tests 1.22s, environment 3ms, prepare 2.50s)
+

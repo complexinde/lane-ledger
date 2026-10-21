@@ -1,0 +1,11 @@
+import {expect,it} from 'vitest';
+import fixture from '../../fixtures/program.json';
+import {validateSource,derive,inspectAt,checkResult} from '../src/domain';
+it('draws exact minimum lanes and an independent earliest overlap lower bound',()=>{const p=validateSource(fixture),r=derive([p],{});expect(r.lane_count).toBe(2);expect(r.lanes).toEqual([['alpha','delta','epsilon'],['beta','gamma']]);expect(r.lower_bound).toEqual({tick:1,active_ids:['alpha','beta'],count:2});});
+it('respects half-open endpoint release in inspection and lane reuse',()=>{const p=validateSource(fixture);expect(inspectAt(p,3)).toEqual(['alpha','gamma']);expect(inspectAt(p,4)).toEqual(['delta','gamma']);expect(inspectAt(p,8)).toEqual([]);});
+it('canonicalizes simultaneous input order by start,end,ASCII ID',()=>{const p=validateSource({version:1,events:[{id:'b',start:0,end:2},{id:'A',start:0,end:2},{id:'c',start:2,end:4},{id:'d',start:2,end:3}]});expect(derive([p],{}).assignments.map((x:any)=>[x.id,x.lane])).toEqual([['A',0],['b',1],['d',0],['c',1]]);});
+it('checks the entire chain result including the lower-bound witness',()=>{const p=validateSource(fixture),r=derive([p],{});expect(()=>checkResult([p],{},r)).not.toThrow();expect(()=>checkResult([p],{},{...r,lower_bound:{tick:0,active_ids:[],count:2}})).toThrow('inconsistent');});
+it('empty programs explicitly have zero lanes and no witness tick',()=>{expect(derive([validateSource({version:1,events:[]})],{})).toEqual({decision:'EMPTY',assignments:[],lanes:[],lane_count:0,lower_bound:{tick:null,active_ids:[],count:0}});});
+it.each([true,1.5,-1,1000001])('refuses invalid typed starts %s',start=>{const p=structuredClone(fixture);(p.events[0] as any).start=start;expect(()=>validateSource(p)).toThrow();});
+it('rejects zero-length, duplicate and unknown event fields',()=>{expect(()=>validateSource({version:1,events:[{id:'a',start:0,end:0}]})).toThrow();expect(()=>validateSource({...fixture,events:[fixture.events[0],fixture.events[0]]})).toThrow();expect(()=>validateSource({...fixture,extra:1})).toThrow();});
+it('requires bounded integer inspection ticks',()=>{const p=validateSource(fixture);for(const t of [-1,1.5,1000001])expect(()=>inspectAt(p,t)).toThrow();});

@@ -1,0 +1,32 @@
+{
+  "project": "LaneLedger",
+  "ai_assisted": true,
+  "experimental_prototype": true,
+  "recorded_at": "2026-10-21T00:38:40.913Z",
+  "chainId": 61999,
+  "deployment": {
+    "address": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+    "hash": "0x8a352fbb3fbcda63f64d39dfe9d8384646217a0a51dd0dd0400048d5e42a97f1",
+    "status": "FINALIZED",
+    "execution_mode": "NORMAL",
+    "value": 0,
+    "leader_only": false,
+    "result_name": "MAJORITY_AGREE",
+    "unique_leader_execution_result": "SUCCESS",
+    "constructor_args": [],
+    "scope": "Constructor only; no business write/read workflow performed"
+  },
+  "source_sha256": "48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8",
+  "onchain_source_sha256": "48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8",
+  "public_source_verification": "Pending normal bound-browser raw-commit byte verification after upload",
+  "frontend": {
+    "compiled": true,
+    "hosting_status_at_recording": "not_yet_configured",
+    "wallet_connected": false,
+    "business_live_verified": false
+  },
+  "project_submitted": false,
+  "users": null,
+  "rewards": null,
+  "note": "The reviewed candidate metadata is preserved byte-for-byte as historical local evidence. This timestamped file records only the separately verified public constructor deployment before Pages configuration. No production safety, real data users or full business workflow is claimed."
+}

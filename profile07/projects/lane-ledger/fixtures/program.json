@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "alpha",
+      "start": 0,
+      "end": 4
+    },
+    {
+      "id": "beta",
+      "start": 1,
+      "end": 3
+    },
+    {
+      "id": "gamma",
+      "start": 3,
+      "end": 6
+    },
+    {
+      "id": "delta",
+      "start": 4,
+      "end": 7
+    },
+    {
+      "id": "epsilon",
+      "start": 7,
+      "end": 8
+    }
+  ]
+}

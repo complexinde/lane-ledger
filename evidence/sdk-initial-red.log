@@ -1,0 +1,754 @@
+WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet', 'studionet', 'testnet_asimov', 'testnet_bradbury']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+FFFFFFFFFFFFFFFFFFFFFFFF                                                 [100%]
+================================== FAILURES ===================================
+____ test_owner_cas_permissionless_derive_terminal_revoke_and_permanent_id ____
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C01121FC40>
+
+    def test_owner_cas_permissionless_derive_terminal_revoke_and_permanent_id(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c);owner=get(c)['owner'];outsider=create_address('outsider')
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C01121FC40>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C00C830110>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_ test_independent_validator_refetches_bytes_and_rejects_complete_forged_packet _
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0113F4860>
+
+    def test_independent_validator_refetches_bytes_and_rejects_complete_forged_packet(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c);c.derive_program('demo',0);assert direct_vm.run_validator() is True
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0113F4860>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C01131A030>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_______ test_failed_confirmation_source_unavailable_preserves_revision ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C01147E020>
+
+    def test_failed_confirmation_source_unavailable_preserves_revision(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c);c.derive_program('demo',0);d=get(c);direct_vm.clear_mocks()
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C01147E020>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0114CB4D0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+___________ test_namespace_dot_repository_rejected_before_fetch[.] ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0114FB740>
+repo = '.'
+
+    @pytest.mark.parametrize('repo',['.','..','%2e'])
+    def test_namespace_dot_repository_rejected_before_fetch(direct_vm,direct_deploy,repo):
+>    c=build(direct_vm,direct_deploy);url='https://raw.githubusercontent.com/example/'+repo+'/'+'a'*40+'/input.json'
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0114FB740>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0114A8350>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+___________ test_namespace_dot_repository_rejected_before_fetch[..] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0114FBBA0>
+repo = '..'
+
+    @pytest.mark.parametrize('repo',['.','..','%2e'])
+    def test_namespace_dot_repository_rejected_before_fetch(direct_vm,direct_deploy,repo):
+>    c=build(direct_vm,direct_deploy);url='https://raw.githubusercontent.com/example/'+repo+'/'+'a'*40+'/input.json'
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0114FBBA0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011572630>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+__________ test_namespace_dot_repository_rejected_before_fetch[%2e] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0115F9D00>
+repo = '%2e'
+
+    @pytest.mark.parametrize('repo',['.','..','%2e'])
+    def test_namespace_dot_repository_rejected_before_fetch(direct_vm,direct_deploy,repo):
+>    c=build(direct_vm,direct_deploy);url='https://raw.githubusercontent.com/example/'+repo+'/'+'a'*40+'/input.json'
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0115F9D00>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011667440>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+____________ test_exact_fixture_metadata_and_zero_constructor_api _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0116939C0>
+
+    def test_exact_fixture_metadata_and_zero_constructor_api(direct_vm,direct_deploy):
+     for name,data in FILES.items():assert SHA(data)==META['sources'][name]['sha256'] and len(data)==META['sources'][name]['bytes'] and META['sources'][name]['public_url'] is None
+>    c=build(direct_vm,direct_deploy);assert c.get_configuration()['protocol']=='LaneLedger'+'-v1'
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0116939C0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0116A2360>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_____ test_source_duplicate_keys_nonfinite_hash_drift_and_response_bounds _____
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0117456C0>
+
+    def test_source_duplicate_keys_nonfinite_hash_drift_and_response_bounds(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0117456C0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C01179D790>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+____ test_minimum_lanes_complete_assignments_and_earliest_overlap_witness _____
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0117B2DE0>
+
+    def test_minimum_lanes_complete_assignments_and_earliest_overlap_witness(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c);r=c.derive_program('demo',0)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0117B2DE0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C01182AEA0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+____________ test_half_open_end_before_start_and_lowest_free_lane _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C01187C400>
+
+    def test_half_open_end_before_start_and_lowest_free_lane(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c,source([event('b',0,2),event('A',0,2),event('d',2,3),event('c',2,4)]));r=c.derive_program('demo',0)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C01187C400>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0118CBA40>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+____________ test_nested_intervals_have_exact_matching_lower_bound ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0118F9D00>
+
+    def test_nested_intervals_have_exact_matching_lower_bound(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c,source([event('outer',0,10),event('mid',1,9),event('inner',2,8)]));r=c.derive_program('demo',0)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0118F9D00>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0119126F0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_________________ test_empty_program_explicit_zero_lane_state _________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011997060>
+
+    def test_empty_program_explicit_zero_lane_state(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c,source([]));r=c.derive_program('demo',0)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011997060>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0119FD220>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_______________ test_strict_interval_and_size_boundaries[bool] ________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011A38B80>
+change = 'bool'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011A38B80>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011A8F2F0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_______________ test_strict_interval_and_size_boundaries[float] _______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011AC63E0>
+change = 'float'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011AC63E0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0116CCDA0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_strict_interval_and_size_boundaries[negative] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011B640E0>
+change = 'negative'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011B640E0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011A8F2F0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_______________ test_strict_interval_and_size_boundaries[zero] ________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011BF1440>
+change = 'zero'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011BF1440>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011C60C50>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+______________ test_strict_interval_and_size_boundaries[reverse] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011C86CA0>
+change = 'reverse'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011C86CA0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C0115EEFF0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_strict_interval_and_size_boundaries[duplicate] _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011D2C2C0>
+change = 'duplicate'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011D2C2C0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011D87E30>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+______________ test_strict_interval_and_size_boundaries[unknown] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011DC5B20>
+change = 'unknown'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011DC5B20>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011E1F800>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_strict_interval_and_size_boundaries[oversize] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011E40900>
+change = 'oversize'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011E40900>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011EAA750>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+___________ test_strict_interval_and_size_boundaries[version_bool] ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011EFC9A0>
+change = 'version_bool'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011EFC9A0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011F5B260>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+______________ test_strict_interval_and_size_boundaries[bad_id] _______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C011F7C720>
+change = 'bad_id'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C011F7C720>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C011F6F9E0>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_strict_interval_and_size_boundaries[nonfinite] _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C01200F7E0>
+change = 'nonfinite'
+
+    @pytest.mark.parametrize('change',['bool','float','negative','zero','reverse','duplicate','unknown','oversize','version_bool','bad_id','nonfinite'])
+    def test_strict_interval_and_size_boundaries(direct_vm,direct_deploy,change):
+     s=source([event('a',0,2)])
+     if change=='bool':s['events'][0]['start']=False
+     if change=='float':s['events'][0]['end']=2.0
+     if change=='negative':s['events'][0]['start']=-1
+     if change=='zero':s['events'][0]['end']=0
+     if change=='reverse':s['events'][0]['start']=3
+     if change=='duplicate':s['events'].append(event('a',3,4))
+     if change=='unknown':s['events'][0]['extra']=1
+     if change=='oversize':s['events']=[event('r'+str(i),0,1) for i in range(17)]
+     if change=='version_bool':s['version']=True
+     if change=='bad_id':s['events'][0]['id']='bad id'
+     if change=='nonfinite':s['events'][0]['end']=float('nan')
+>    c=build(direct_vm,direct_deploy)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C01200F7E0>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C012076F60>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+____________ test_sixteen_simultaneous_intervals_resource_boundary ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C0120C4E00>
+
+    def test_sixteen_simultaneous_intervals_resource_boundary(direct_vm,direct_deploy):
+>    c=build(direct_vm,direct_deploy);open_record(direct_vm,c,source([event('r'+str(i).zfill(2),0,1000000) for i in range(16)]));r=c.derive_program('demo',0)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+deploy = <function direct_deploy.<locals>._deploy at 0x000001C0120C4E00>
+
+    def build(vm,deploy):
+     vm.warp('2026-10-21T00:00:00Z');c=deploy(str(ROOT/'contract.py'),sdk_version='v0.2.12')
+>    assert hasattr(c,'get_configuration'),'Public contract behavior not implemented'
+E    AssertionError: Public contract behavior not implemented
+E    assert False
+E     +  where False = hasattr(<CalldataProxy for <_contract_contract.LaneLedger object at 0x000001C01210F590>>, 'get_configuration')
+
+tests\test_contract.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_contract.py::test_owner_cas_permissionless_derive_terminal_revoke_and_permanent_id
+FAILED tests/test_contract.py::test_independent_validator_refetches_bytes_and_rejects_complete_forged_packet
+FAILED tests/test_contract.py::test_failed_confirmation_source_unavailable_preserves_revision
+FAILED tests/test_contract.py::test_namespace_dot_repository_rejected_before_fetch[.]
+FAILED tests/test_contract.py::test_namespace_dot_repository_rejected_before_fetch[..]
+FAILED tests/test_contract.py::test_namespace_dot_repository_rejected_before_fetch[%2e]
+FAILED tests/test_contract.py::test_exact_fixture_metadata_and_zero_constructor_api
+FAILED tests/test_contract.py::test_source_duplicate_keys_nonfinite_hash_drift_and_response_bounds
+FAILED tests/test_contract.py::test_minimum_lanes_complete_assignments_and_earliest_overlap_witness
+FAILED tests/test_contract.py::test_half_open_end_before_start_and_lowest_free_lane
+FAILED tests/test_contract.py::test_nested_intervals_have_exact_matching_lower_bound
+FAILED tests/test_contract.py::test_empty_program_explicit_zero_lane_state - ...
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[bool]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[float]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[negative]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[zero]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[reverse]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[duplicate]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[unknown]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[oversize]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[version_bool]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[bad_id]
+FAILED tests/test_contract.py::test_strict_interval_and_size_boundaries[nonfinite]
+FAILED tests/test_contract.py::test_sixteen_simultaneous_intervals_resource_boundary
+24 failed in 2.36s

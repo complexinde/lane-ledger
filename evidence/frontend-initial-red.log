@@ -1,0 +1,317 @@
+$ vitest run
+
+ RUN  v3.2.4 C:/Users/Administrator/Documents/ChatGPT/web3/contributions/genlayer-2026-10-21/profile07/projects/lane-ledger/frontend
+
+ ✓ tests/context.test.ts (4 tests) 11ms
+ ✓ tests/public-json.test.ts (2 tests) 16ms
+ ❯ tests/domain.test.ts (11 tests | 6 failed) 25ms
+   × draws exact minimum lanes and an independent earliest overlap lower bound 12ms
+     → Not implemented
+   × respects half-open endpoint release in inspection and lane reuse 1ms
+     → Not implemented
+   × canonicalizes simultaneous input order by start,end,ASCII ID 1ms
+     → Not implemented
+   × checks the entire chain result including the lower-bound witness 1ms
+     → Not implemented
+   × empty programs explicitly have zero lanes and no witness tick 1ms
+     → Not implemented
+   ✓ refuses invalid typed starts true 2ms
+   ✓ refuses invalid typed starts 1.5 1ms
+   ✓ refuses invalid typed starts -1 0ms
+   ✓ refuses invalid typed starts 1000001 1ms
+   ✓ rejects zero-length, duplicate and unknown event fields 1ms
+   × requires bounded integer inspection ticks 1ms
+     → Not implemented
+ ❯ tests/wallet.test.ts (38 tests | 37 failed) 79ms
+   ✓ characterizes actual SDK helper and viem formatter against a captured public Studio shape 6ms
+   × decodes an actual SDK dictionary view and preserves errors 13ms
+     → Not implemented
+   × rejects a mismatched decoded dictionary boundary: null 17ms
+     → expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+   × rejects a mismatched decoded dictionary boundary: %j 3ms
+     → expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+   × rejects a mismatched decoded dictionary boundary: 42 3ms
+     → expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+   × rejects a mismatched decoded dictionary boundary: true 3ms
+     → expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+   × rejects a mismatched decoded dictionary boundary: "{\"revision\":1}" 2ms
+     → expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+   × blocks wrong chain or changed account before submission 1ms
+     → Not implemented
+   × rejects a missing deployment and mutable or noncanonical source before signing 4ms
+     → expected [Function] to throw error including 'deployment' but got 'Not implemented'
+   × proves finalized raw leader success before reading, even when SDK formatter is unavailable 2ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: hash 2ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: sender 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: target 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: nonzero 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: booleanzero 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: missingvalue 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: mode 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: leaderonly 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: majority 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: pending 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: noleader 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: duplicateleader 1ms
+     → Not implemented
+   × retains unknown evidence and never refreshes/resubmits: leadererror 1ms
+     → Not implemented
+   × rejects conflicting available SDK fields { statusName: 'PENDING' } 1ms
+     → Not implemented
+   × rejects conflicting available SDK fields { hash: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' } 1ms
+     → Not implemented
+   × rejects conflicting available SDK fields { from_address: '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } 0ms
+     → Not implemented
+   × rejects conflicting available SDK fields { to_address: '0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' } 0ms
+     → Not implemented
+   × rejects conflicting available SDK fields { value: 1n } 0ms
+     → Not implemented
+   × rejects conflicting available SDK fields { txExecutionResultName: 'FINISHED_WITH_ERROR' } 0ms
+     → Not implemented
+   × persists exact pending metadata and resumes after reload without write replay 1ms
+     → Not implemented
+   × retains unknown submission without hash and allows bound observation only 2ms
+     → Not implemented
+   × clears a user-rejected signature but preserves a pending read failure 1ms
+     → Not implemented
+   × does not observe a pending hash under another wallet account 1ms
+     → Not implemented
+   × rejects an additional conflicting available SDK receipt field 1ms
+     → Not implemented
+   × rejects an additional conflicting available SDK receipt field 1ms
+     → Not implemented
+   × rejects an additional conflicting available SDK receipt field 0ms
+     → Not implemented
+   × rejects conflicting named/numeric SDK execution or unknown numeric codes 1ms
+     → Not implemented
+   × rejects conflicting named/numeric SDK execution or unknown numeric codes 1ms
+     → Not implemented
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 43 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain.test.ts > draws exact minimum lanes and an independent earliest overlap lower bound
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:4:93
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/43]⎯
+
+ FAIL  tests/domain.test.ts > respects half-open endpoint release in inspection and lane reuse
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:5:84
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/43]⎯
+
+ FAIL  tests/domain.test.ts > canonicalizes simultaneous input order by start,end,ASCII ID
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:6:80
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/43]⎯
+
+ FAIL  tests/domain.test.ts > checks the entire chain result including the lower-bound witness
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:7:84
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/43]⎯
+
+ FAIL  tests/domain.test.ts > empty programs explicitly have zero lanes and no witness tick
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:8:88
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/43]⎯
+
+ FAIL  tests/domain.test.ts > requires bounded integer inspection ticks
+Error: Not implemented
+ ❯ validateSource src/domain.ts:1:55
+      1| export const validateSource=(..._a:any[]):any=>{throw Error("Not imple…
+       |                                                       ^
+      2| export const derive=(..._a:any[]):any=>{throw Error("Not implemented")…
+      3| export const checkResult=(..._a:any[]):any=>{throw Error("Not implemen…
+ ❯ tests/domain.test.ts:11:61
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/43]⎯
+
+ FAIL  tests/wallet.test.ts > decodes an actual SDK dictionary view and preserves errors
+Error: Not implemented
+ ❯ WalletSession.read src/wallet.ts:3:130
+
+ ❯ tests/wallet.test.ts:19:95
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/43]⎯
+
+ FAIL  tests/wallet.test.ts > rejects a mismatched decoded dictionary boundary: null
+ FAIL  tests/wallet.test.ts > rejects a mismatched decoded dictionary boundary: %j
+ FAIL  tests/wallet.test.ts > rejects a mismatched decoded dictionary boundary: 42
+ FAIL  tests/wallet.test.ts > rejects a mismatched decoded dictionary boundary: true
+ FAIL  tests/wallet.test.ts > rejects a mismatched decoded dictionary boundary: "{\"revision\":1}"
+AssertionError: expected [Function] to throw error including 'dictionary' but got 'Not implemented'
+
+Expected: "dictionary"
+Received: "Not implemented"
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/43]⎯
+
+ FAIL  tests/wallet.test.ts > blocks wrong chain or changed account before submission
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:21:86
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/43]⎯
+
+ FAIL  tests/wallet.test.ts > rejects a missing deployment and mutable or noncanonical source before signing
+AssertionError: expected [Function] to throw error including 'deployment' but got 'Not implemented'
+
+Expected: "deployment"
+Received: "Not implemented"
+
+ ❯ tests/wallet.test.ts:22:125
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/43]⎯
+
+ FAIL  tests/wallet.test.ts > proves finalized raw leader success before reading, even when SDK formatter is unavailable
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:23:121
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/43]⎯
+
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: hash
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: sender
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: target
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: nonzero
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: booleanzero
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: missingvalue
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: mode
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: leaderonly
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: majority
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: pending
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: noleader
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: duplicateleader
+ FAIL  tests/wallet.test.ts > retains unknown evidence and never refreshes/resubmits: leadererror
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:24:1045
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/43]⎯
+
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { statusName: 'PENDING' }
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { hash: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' }
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { from_address: '0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { to_address: '0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' }
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { value: 1n }
+ FAIL  tests/wallet.test.ts > rejects conflicting available SDK fields { txExecutionResultName: 'FINISHED_WITH_ERROR' }
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:25:283
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/43]⎯
+
+ FAIL  tests/wallet.test.ts > persists exact pending metadata and resumes after reload without write replay
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:26:108
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/43]⎯
+
+ FAIL  tests/wallet.test.ts > retains unknown submission without hash and allows bound observation only
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:27:104
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/43]⎯
+
+ FAIL  tests/wallet.test.ts > clears a user-rejected signature but preserves a pending read failure
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:28:100
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/43]⎯
+
+ FAIL  tests/wallet.test.ts > does not observe a pending hash under another wallet account
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:29:91
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/43]⎯
+
+ FAIL  tests/wallet.test.ts > rejects an additional conflicting available SDK receipt field
+ FAIL  tests/wallet.test.ts > rejects an additional conflicting available SDK receipt field
+ FAIL  tests/wallet.test.ts > rejects an additional conflicting available SDK receipt field
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:31:265
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/43]⎯
+
+ FAIL  tests/wallet.test.ts > rejects conflicting named/numeric SDK execution or unknown numeric codes
+ FAIL  tests/wallet.test.ts > rejects conflicting named/numeric SDK execution or unknown numeric codes
+Error: Not implemented
+ ❯ WalletSession.connect src/wallet.ts:3:233
+
+ ❯ ready tests/wallet.test.ts:16:47
+ ❯ tests/wallet.test.ts:33:252
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/43]⎯
+
+
+ Test Files  2 failed | 2 passed (4)
+      Tests  43 failed | 12 passed (55)
+   Start at  07:11:38
+   Duration  4.12s (transform 676ms, setup 0ms, collect 3.66s, tests 130ms, environment 2ms, prepare 3.28s)
+
+[ELIFECYCLE] Test failed. See above for more details.
