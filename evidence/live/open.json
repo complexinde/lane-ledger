@@ -1,0 +1,169 @@
+{
+  "at": "2026-10-21T18:14:09.571Z",
+  "profileSeq": 7,
+  "project": "LaneLedger",
+  "method": "open_program",
+  "recordId": "LaneH1022A",
+  "transactionHash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+  "expectedOwner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+  "expectedContract": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+  "frontendCommit": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
+  "userManuallyConfirmed": true,
+  "rootWarningOverrideClicked": false,
+  "rawFinalityAndBindingIndependentlyChecked": true,
+  "exactPublicSourceSnapshotsMatched": true,
+  "policyMatched": true,
+  "comparison": "Canonical exact JSON: immutable published program, last_capture sources, locators, policy and binding all matched",
+  "record": {
+    "certificate_id": "",
+    "history": [
+      {
+        "at": 1792606334,
+        "certificate_id": "",
+        "revision": 0,
+        "status": "OPEN"
+      }
+    ],
+    "last_capture": {
+      "binding": {
+        "chain_id": 61999,
+        "contract": "0xf074b35aec1a0636da0ea64d3e31bc3fc2ec2bf0",
+        "locators": [
+          {
+            "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+            "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json"
+          }
+        ],
+        "observed_at": 1792606334,
+        "operation": "open",
+        "owner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+        "policy": {},
+        "protocol": "LaneLedger-v1",
+        "record_id": "LaneH1022A",
+        "revision": 0
+      },
+      "result": null,
+      "sources": [
+        {
+          "events": [
+            {
+              "end": 4,
+              "id": "alpha",
+              "start": 0
+            },
+            {
+              "end": 3,
+              "id": "beta",
+              "start": 1
+            },
+            {
+              "end": 6,
+              "id": "gamma",
+              "start": 3
+            },
+            {
+              "end": 7,
+              "id": "delta",
+              "start": 4
+            },
+            {
+              "end": 8,
+              "id": "epsilon",
+              "start": 7
+            }
+          ],
+          "version": 1
+        }
+      ]
+    },
+    "locators": [
+      {
+        "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+        "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json"
+      }
+    ],
+    "owner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+    "policy": {},
+    "reason": "",
+    "record_id": "LaneH1022A",
+    "result": null,
+    "revision": 0,
+    "sources": [
+      {
+        "events": [
+          {
+            "end": 4,
+            "id": "alpha",
+            "start": 0
+          },
+          {
+            "end": 3,
+            "id": "beta",
+            "start": 1
+          },
+          {
+            "end": 6,
+            "id": "gamma",
+            "start": 3
+          },
+          {
+            "end": 7,
+            "id": "delta",
+            "start": 4
+          },
+          {
+            "end": 8,
+            "id": "epsilon",
+            "start": 7
+          }
+        ],
+        "version": 1
+      }
+    ],
+    "status": "OPEN"
+  },
+  "proof": {
+    "hash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+    "raw": {
+      "hash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+      "from_address": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "to_address": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "value": 0,
+      "status": "FINALIZED",
+      "execution_mode": "NORMAL",
+      "leader_only": false,
+      "result_name": "MAJORITY_AGREE",
+      "consensus_data": {
+        "leader_receipt": [
+          {
+            "mode": "leader",
+            "execution_result": "SUCCESS"
+          }
+        ]
+      }
+    },
+    "sdk": {
+      "hash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+      "from_address": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "sender": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "to_address": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "recipient": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "status": 7,
+      "statusName": "FINALIZED",
+      "execution_mode": "NORMAL",
+      "leader_only": false,
+      "result_name": "MAJORITY_AGREE",
+      "result": 6,
+      "consensus_data": {
+        "leader_receipt": [
+          {
+            "mode": "leader",
+            "execution_result": "SUCCESS"
+          }
+        ]
+      }
+    }
+  },
+  "pending": null,
+  "busy": false
+}

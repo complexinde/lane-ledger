@@ -1,0 +1,284 @@
+{
+  "at": "2026-10-21T18:19:02.874Z",
+  "profileSeq": 7,
+  "project": "LaneLedger",
+  "method": "derive_program",
+  "recordId": "LaneH1022A",
+  "transactionHash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+  "expectedOwner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+  "expectedContract": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+  "frontendCommit": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
+  "userManuallyConfirmed": true,
+  "rootWarningOverrideClicked": false,
+  "rawFinalityAndBindingIndependentlyChecked": true,
+  "exactPublicSourceSnapshotsMatched": true,
+  "exactResultAndLowerBoundMatched": true,
+  "certificateComputedFromCanonicalCapture": true,
+  "comparison": "Exact 2-lane assignment and earliest maximum overlap tick1 [alpha,beta]; complete canonical sources/result and derive capture certificate matched.",
+  "record": {
+    "certificate_id": "fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d",
+    "history": [
+      {
+        "at": 1792606334,
+        "certificate_id": "",
+        "revision": 0,
+        "status": "OPEN"
+      },
+      {
+        "at": 1792606658,
+        "certificate_id": "fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d",
+        "revision": 1,
+        "status": "DERIVED"
+      }
+    ],
+    "last_capture": {
+      "binding": {
+        "chain_id": 61999,
+        "contract": "0xf074b35aec1a0636da0ea64d3e31bc3fc2ec2bf0",
+        "locators": [
+          {
+            "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+            "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json"
+          }
+        ],
+        "observed_at": 1792606658,
+        "operation": "derive",
+        "owner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+        "policy": {},
+        "protocol": "LaneLedger-v1",
+        "record_id": "LaneH1022A",
+        "revision": 0
+      },
+      "result": {
+        "assignments": [
+          {
+            "end": 4,
+            "id": "alpha",
+            "lane": 0,
+            "start": 0
+          },
+          {
+            "end": 3,
+            "id": "beta",
+            "lane": 1,
+            "start": 1
+          },
+          {
+            "end": 6,
+            "id": "gamma",
+            "lane": 1,
+            "start": 3
+          },
+          {
+            "end": 7,
+            "id": "delta",
+            "lane": 0,
+            "start": 4
+          },
+          {
+            "end": 8,
+            "id": "epsilon",
+            "lane": 0,
+            "start": 7
+          }
+        ],
+        "decision": "SCHEDULED",
+        "lane_count": 2,
+        "lanes": [
+          [
+            "alpha",
+            "delta",
+            "epsilon"
+          ],
+          [
+            "beta",
+            "gamma"
+          ]
+        ],
+        "lower_bound": {
+          "active_ids": [
+            "alpha",
+            "beta"
+          ],
+          "count": 2,
+          "tick": 1
+        }
+      },
+      "sources": [
+        {
+          "events": [
+            {
+              "end": 4,
+              "id": "alpha",
+              "start": 0
+            },
+            {
+              "end": 3,
+              "id": "beta",
+              "start": 1
+            },
+            {
+              "end": 6,
+              "id": "gamma",
+              "start": 3
+            },
+            {
+              "end": 7,
+              "id": "delta",
+              "start": 4
+            },
+            {
+              "end": 8,
+              "id": "epsilon",
+              "start": 7
+            }
+          ],
+          "version": 1
+        }
+      ]
+    },
+    "locators": [
+      {
+        "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+        "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json"
+      }
+    ],
+    "owner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+    "policy": {},
+    "reason": "",
+    "record_id": "LaneH1022A",
+    "result": {
+      "assignments": [
+        {
+          "end": 4,
+          "id": "alpha",
+          "lane": 0,
+          "start": 0
+        },
+        {
+          "end": 3,
+          "id": "beta",
+          "lane": 1,
+          "start": 1
+        },
+        {
+          "end": 6,
+          "id": "gamma",
+          "lane": 1,
+          "start": 3
+        },
+        {
+          "end": 7,
+          "id": "delta",
+          "lane": 0,
+          "start": 4
+        },
+        {
+          "end": 8,
+          "id": "epsilon",
+          "lane": 0,
+          "start": 7
+        }
+      ],
+      "decision": "SCHEDULED",
+      "lane_count": 2,
+      "lanes": [
+        [
+          "alpha",
+          "delta",
+          "epsilon"
+        ],
+        [
+          "beta",
+          "gamma"
+        ]
+      ],
+      "lower_bound": {
+        "active_ids": [
+          "alpha",
+          "beta"
+        ],
+        "count": 2,
+        "tick": 1
+      }
+    },
+    "revision": 1,
+    "sources": [
+      {
+        "events": [
+          {
+            "end": 4,
+            "id": "alpha",
+            "start": 0
+          },
+          {
+            "end": 3,
+            "id": "beta",
+            "start": 1
+          },
+          {
+            "end": 6,
+            "id": "gamma",
+            "start": 3
+          },
+          {
+            "end": 7,
+            "id": "delta",
+            "start": 4
+          },
+          {
+            "end": 8,
+            "id": "epsilon",
+            "start": 7
+          }
+        ],
+        "version": 1
+      }
+    ],
+    "status": "DERIVED"
+  },
+  "proof": {
+    "hash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+    "raw": {
+      "hash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+      "from_address": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "to_address": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "value": 0,
+      "status": "FINALIZED",
+      "execution_mode": "NORMAL",
+      "leader_only": false,
+      "result_name": "MAJORITY_AGREE",
+      "consensus_data": {
+        "leader_receipt": [
+          {
+            "mode": "leader",
+            "execution_result": "SUCCESS"
+          }
+        ]
+      }
+    },
+    "sdk": {
+      "hash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+      "from_address": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "sender": "0x853c1f6C84aD7B01aB51695228a643Da26d795ca",
+      "to_address": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "recipient": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+      "status": 7,
+      "statusName": "FINALIZED",
+      "execution_mode": "NORMAL",
+      "leader_only": false,
+      "result_name": "MAJORITY_AGREE",
+      "result": 6,
+      "consensus_data": {
+        "leader_receipt": [
+          {
+            "mode": "leader",
+            "execution_result": "SUCCESS"
+          }
+        ]
+      }
+    }
+  },
+  "pending": null,
+  "busy": false
+}

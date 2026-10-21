@@ -1,74 +1,37 @@
-> Current frontend candidate: revision003, official genlayer-js1.1.8, 128 frontend tests/25 actual contract SDK tests. New independent peer/publication/live validation pending at local freeze. Revision002 is superseded after a reproduced SDK fallback replay risk;003 adds a per-act one-shot wallet gate. See FRONTEND_REVISION_003.md. The original package README below and its old test counts/closed peer/publication nulls are historical, not current frontend or deployment conclusions.
-
 # LaneLedger
 
-Partition a declared half-open interval program into the minimum number of simultaneous lanes, with a matching overlap lower-bound witness.
+LaneLedger is an AI-assisted, MIT-licensed prototype for exact minimum-lane interval partitioning. It combines commit-pinned public snapshots, deterministic lane reuse, an independent maximum-overlap witness and owner-confirmed GenLayer certificates. Inputs are synthetic abstract intervals; no real booking, identity, attendance or external work is performed.
 
-**AI-assisted experimental local prototype.** This is one complete original Project (contract + distinct interactive frontend + synthetic fixtures + tests). Its bundled contract is not an extra independent IC contribution. No LLM is used. No deployment, public source, hosting, live wallet business flow, real user, funding or award is claimed.
+## Current demonstrated state
 
-## Deterministic domain
+The public application is [https://complexinde.github.io/lane-ledger/](https://complexinde.github.io/lane-ledger/). The existing Intelligent Contract is `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0` on **GenLayer Studio, chain61999**. The deployed source and revision003 frontend were verified. A recorded demonstration exercised **Open -> Derive -> Owner confirm** through the normal wallet workflow. The demonstrated record **LaneH1022A** reached **CONFIRMED, revision2**, with all three original business transactions **FINALIZED / NORMAL / MAJORITY_AGREE / unique leader SUCCESS**.
 
-The source is strict version1 with0..16 unique ASCII event IDs and exact integer0<=start<end<=1000000. Intervals are half-open [start,end); ending at a tick releases the lane before another event starts. Canonical event order is (start,end,ASCII ID); each event uses the lowest free lane, or the next contiguous lane ID.
+The certificate is `fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d`. The result uses **two lanes**: lane0 **alpha, delta, epsilon** and lane1 **beta, gamma**. At the earliest maximum-overlap tick **1**, **alpha and beta** are simultaneously active, proving a lower bound of two lanes. This matches the canonical assignment, so the demonstrated result is minimal.
 
-A separate scan of original intervals at every endpoint finds the earliest maximum simultaneous active set, with ASCII IDs. It never infers overlap from the assigned lanes. The lane count must equal that lower bound. An empty program is EMPTY, with zero lanes and a null witness tick.
-
-The original five-event fixture uses2 lanes: [alpha,delta,epsilon] and [beta,gamma]. Earliest maximum overlap is tick1 with alpha/beta. The interactive timeline and instant inspector show exactly why end/start adjacency does not require another lane. Tick coordinates are abstract, with no real timezone, booking or attendance authority.
-
-## API and state
-
-Constructor: **zero arguments**. Each open record is owned by its caller; the deploying account has no exclusive registration privilege. Record IDs are globally first-writer and never reusable. Choose a fresh ID and inspect its actual owner; this is not an identity/namespace ownership service.
-
-| Method | Behavior |
+| Transition | Original transaction hash |
 | --- | --- |
-| `open_program(record_id,source_url,source_sha256)` | Immutable URL/byte hashes/policy, independently verified source; OPEN revision0. |
-| `derive_program(record_id,expected_revision)` | Permissionless, one fresh full computation; DERIVED revision1 and bound certificate. |
-| `confirm_program(record_id,expected_revision,certificate_id)` | Original owner only; exact current certificate/CAS and another fresh full computation; CONFIRMED revision2. |
-| `revoke_program(record_id,expected_revision,reason)` | Original owner only, trimmed reason1..160; terminal from any unrevoked stage; no network needed. |
-| `get_program(record_id)` | Actual decoded dictionary with owner, source snapshots, result, certificate, captures and finite history. |
-| `get_configuration()` | Actual decoded dictionary with protocol/resource limits. |
+| Open | `0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47` |
+| Derive | `0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad` |
+| Owner confirm | `0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2` |
 
-At most four history entries per record: OPEN/DERIVED/CONFIRMED/REVOKED. Revoked results remain visible as historical and cannot be reactivated. Failed source/validation writes preserve prior state. No funds are held or transferred.
+See [LIVE_WALKTHROUGH.md](LIVE_WALKTHROUGH.md) for the three-step read-only demonstration, [LIVE_STATUS.json](LIVE_STATUS.json) for the timestamped scope, [evidence/live/main-workflow.json](evidence/live/main-workflow.json) for the workflow summary and the linked individual transaction proofs. These records contain selected public proof fields, not full node configuration or VM output.
 
-## Independent source consensus
+## Read the demonstrated record
 
-Canonical public source locators require HTTPS raw.githubusercontent.com/owner/repo/40-lowercase-hex/path, explicit segment checks and lowercase SHA256. Dot/empty/encoded segments, queries and mutable refs are rejected. HTTP200,1..16384 exact UTF8 bytes, SHA256, strict unknown/duplicate-key/nonfinite/type/size schema validation are mandatory. The size bound is post-download, not a network bandwidth or redirect control. Availability, GitHub transport and source-author truth remain assumptions.
+1. Open the public application. No wallet is required to read this record.
+2. Set **Actual contract address** to `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0`, **Unique record ID** to `LaneH1022A`, and click **Read record**.
+3. Expand **Loaded source, result and certificate**, verify CONFIRMED/revision2 and the certificate above, then click **Inspect earliest maximum overlap** to inspect tick1. The two-lane assignment and lower-bound witness should agree.
 
-During open, derive and confirm, every validator independently fetches every original locator, validates bytes and schema and recomputes the complete binding/source/result packet. Full canonical equality rejects valid-looking but suboptimal/noncanonical proposals; tests include such complete forged packets. Binding includes protocol, chain, contract, owner, record, locators/hashes, policy, revision, operation and observation time. Revocation deliberately requires no source availability. See THREAT_MODEL.md.
+## Source and deterministic rule
 
-## Reproduce local evidence
+The original public fixture is [https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json](https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json) (373 exact bytes, SHA256 `188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8`). It declares five events with integer abstract ticks. Intervals use `[start,end)`: ending releases a lane before a new interval starts. Events are processed deterministically, the lowest available lane is reused, and an independent overlap sweep produces the earliest maximum-overlap witness. Complete fresh source/result captures are compared by validators; owner confirmation binds the current derived certificate and revision.
 
-Use Python3.12 and exact requirements, Node20.19+/22.12+ and pnpm11.25.0. Run from this individual package directory because gltest clears its cwd artifacts folder:
+The deployed contract source SHA256 remains `48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8`. The original constructor transaction is `0x8a352fbb3fbcda63f64d39dfe9d8384646217a0a51dd0dd0400048d5e42a97f1`. It is separate from the three business transactions above. [deployment.json](deployment.json) retains the constructor identity fields and records the later business workflow separately.
 
-```powershell
-python -m venv .venv
-# Activate the local venv.
-python -m pip install -r requirements.txt
-python tools/verify.py
-cd frontend
-pnpm install --frozen-lockfile
-pnpm test
-pnpm build
-pnpm dev
-```
+The current frontend uses reviewed revision003, official **genlayer-js1.1.8**, checksum RPC addresses, account/chain context checks, strict original-hash receipt proof and a one-shot wallet submission gate. Its published frontend commit before this documentation batch is `acecde60d5e2d2eeded280399e6029c3366f6f0f`. Contract source, fixtures, business algorithms and compiled assets are unchanged by this documentation update.
 
-`tools/verify.py` uses the exact GenVMv0.2.12 runner pinned in contract.py, actual genlayer-test0.29.2 storage/calldata/validator execution, genvm-linter0.11.0 full semantic validation/schema and zero constructor parameters. The narrow Windows compatibility fixture only handles upstream fd0 temp-file cleanup/warp metadata; it does not replace contract computation. HTTP responses are explicit test fixtures. No direct test is a network transaction.
+## Scope and status
 
-Recorded final suite: **25 actual SDK tests and 58 frontend tests**, full semantic/schema/TypeScript/Vite exit0. `evidence/sdk-initial-red.log` records the minimal no-behavior skeleton failures; frontend assertion stubs and missing UI behavior red logs are retained. Frontend tests execute production domain/wallet/actual-main handlers; transports/DOM are controlled harnesses. The Vite actual SDK bundle exceeds500kB before compression, a retained nonfatal notice. `python tools/verify_frontend.py` reproduces checks and exact frontend input hashes.
+This is a **single-operator synthetic prototype demonstration**. Open, Derive and Owner confirm were exercised live. Revoke is implemented and locally tested but was not exercised live; no independent users, production scheduling, adoption, funding or awards are claimed. Portal Project submission was **false at 2026-10-21T18:42:16.819132+00:00**. Portal status is a timestamped snapshot; later submission is recorded separately.
 
-## Configure the real workflow
-
-Fixtures are original MIT synthetic examples, not actual customers or external facts. Every test_url in fixtures/source.json is a local mocked locator; **all public_url fields are null**. Publish exact source bytes at real immutable commits and independently verify the digests. Policy.json in SpecPair is a constructor-free open parameter fixture, not a third fetched source. Enter actual published URLs/hashes, an independently verified zero-argument deployment address on Studio61999 and a unique record ID.
-
-Connect MetaMask → open immutable sources → derive → inspect the actual loaded result and witnesses → owner confirm the exact certificate, or separately revoke. Local editors and JSON exports do not publish, deploy or update chain state. Edited local previews clear the loaded confirmation context; only a verified source/result read can enable confirmation. Source-only previews are labeled local computation, and revoked overlays are labeled historical.
-
-The actual genlayer-js2.0.0-rc.2 adapter matches these dictionary views. It requests fullTransaction finalized observation and mandatory independent unformatted eth_getTransactionByHash proof of the original hash/from/to/value0, FINALIZED/NORMAL/leader_only=false/MAJORITY_AGREE and exactly one leader SUCCESS. Every available SDK binding/status/execution field must agree; named/numeric execution contradictions and unknown numeric codes fail closed. Missing Studio fields stay missing. Actual SDK helper/viem formatter tests use a captured public constructor reference from another contract; this is not this Project live business evidence.
-
-Before SDK submission, public original account/contract/record/method/hash-null metadata is saved in session storage. Network errors, invalid/missing hashes and failed/unknown execution block another write. Only explicit wallet rejection code4001 clears a hashless attempt. Same-tab reload restores the context; reconnect the original account, attach only its original wallet-activity hash if needed and choose Observe same transaction. Attaching a hash does not reconstruct lost calldata independently. Observation never resubmits. Removing storage, a different tab/origin or unavailable storage defeats a browser-local guard; retain original wallet activity/hash independently. No keys or secrets are stored.
-
-Busy operations disable all controls; captured address/record epoch and final visible-context checks discard stale reads/actions even if disabled inputs are changed programmatically. The UI is original domain functionality, not a substitute for chain results. Browser visual QA and full actual wallet/network business flow remain unverified.
-
-## Release status
-
-MIT licensed. PUBLISH_MANIFEST.json binds the complete allowlisted payload; dependencies,SDK caches,build output,environment files and credentials are excluded. CONTRIBUTION.json counts this once as a Project. Independent local peer review is closed with no Important/Critical finding; the reviewer read source, recorded evidence and archives without rerunning full SDK/frontend suites. This is not an external audit. Public source publication, deployment, hosting and real business verification belong to the root task. Exact contract SHA256: 48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8.
-
-The exact reviewed pre-finalization ZIP is preserved in the workspace history directory. Final source-only reseal adds peer evidence and metadata only; contract and frontend input hashes are unchanged. See evidence/independent-review.json and independent-artifact-check.json.
+Unknown wallet outcomes must retain their original transaction hash and context and must never be automatically resent. This documentation does not authorize bypassing wallet warnings. [HISTORICAL_README_PRE_LIVE.md](HISTORICAL_README_PRE_LIVE.md) preserves the exact README from the prior published frontend commit as historical evidence; its earlier deployment/live-status descriptions are superseded by the timestamped facts above.

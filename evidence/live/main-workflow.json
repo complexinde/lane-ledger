@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-21T18:40:25.428Z",
+  "profileSeq": 7,
+  "project": "LaneLedger",
+  "chainId": 61999,
+  "network": "GenLayer Studio",
+  "contract": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
+  "owner": "0x853c1f6c84ad7b01ab51695228a643da26d795ca",
+  "recordId": "LaneH1022A",
+  "status": "CONFIRMED",
+  "revision": 2,
+  "certificate": "fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d",
+  "verifiedMainWorkflow": true,
+  "scope": "Open -> Derive -> Owner confirm only; Revoke implemented and locally tested, not exercised live.",
+  "transactions": [
+    {
+      "method": "open_program",
+      "hash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+      "evidence": "07-lane-ledger-live-open-finalized-001.json"
+    },
+    {
+      "method": "derive_program",
+      "hash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+      "evidence": "07-lane-ledger-live-derive-finalized-001.json"
+    },
+    {
+      "method": "confirm_program",
+      "hash": "0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2",
+      "evidence": "07-lane-ledger-live-confirm-finalized-001.json"
+    }
+  ],
+  "allThreeTransactionsFinalizedNormalMajorityUniqueLeaderSuccess": true,
+  "sourceFixture": {
+    "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json",
+    "commit": "b86c0378d66885642ed4348c5f42fa25a640817a",
+    "bytes": 373,
+    "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+    "publicBytesVerified": true,
+    "synthetic": true
+  },
+  "sourceSnapshotsAndPolicyMatched": true,
+  "exactResult": {
+    "assignments": [
+      {
+        "end": 4,
+        "id": "alpha",
+        "lane": 0,
+        "start": 0
+      },
+      {
+        "end": 3,
+        "id": "beta",
+        "lane": 1,
+        "start": 1
+      },
+      {
+        "end": 6,
+        "id": "gamma",
+        "lane": 1,
+        "start": 3
+      },
+      {
+        "end": 7,
+        "id": "delta",
+        "lane": 0,
+        "start": 4
+      },
+      {
+        "end": 8,
+        "id": "epsilon",
+        "lane": 0,
+        "start": 7
+      }
+    ],
+    "decision": "SCHEDULED",
+    "lane_count": 2,
+    "lanes": [
+      [
+        "alpha",
+        "delta",
+        "epsilon"
+      ],
+      [
+        "beta",
+        "gamma"
+      ]
+    ],
+    "lower_bound": {
+      "active_ids": [
+        "alpha",
+        "beta"
+      ],
+      "count": 2,
+      "tick": 1
+    }
+  },
+  "deriveCertificateHashRecomputed": true,
+  "syntheticInputs": true,
+  "oneOperator": true,
+  "independentAdoptionClaim": false,
+  "liveRevoke": false,
+  "ProjectSubmitted": false,
+  "frontendRevision": 3,
+  "frontendCommit": "acecde60d5e2d2eeded280399e6029c3366f6f0f"
+}

@@ -14,5 +14,38 @@
   "constructorValue": 0,
   "sourceReadbackVerified": true,
   "scope": "Constructor only; frontend business lifecycle not yet verified",
-  "fixtureCommit": "b86c0378d66885642ed4348c5f42fa25a640817a"
+  "fixtureCommit": "b86c0378d66885642ed4348c5f42fa25a640817a",
+  "liveScope": "Open -> Derive -> Owner confirm, one operator, synthetic intervals; no live Revoke or independent adoption.",
+  "currentFrontend": {
+    "revision": 3,
+    "commit": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
+    "url": "https://complexinde.github.io/lane-ledger/",
+    "exactStableSDK": "genlayer-js@1.1.8"
+  },
+  "publicFixture": {
+    "url": "https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json",
+    "commit": "b86c0378d66885642ed4348c5f42fa25a640817a",
+    "bytes": 373,
+    "sha256": "188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8",
+    "publicBytesVerified": true,
+    "synthetic": true
+  },
+  "businessWorkflow": {
+    "verified": true,
+    "recordId": "LaneH1022A",
+    "status": "CONFIRMED",
+    "revision": 2,
+    "certificate": "fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d",
+    "transactionHashes": {
+      "open": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+      "derive": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+      "confirm": "0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2"
+    },
+    "allThreeFinalizedNormalMajorityUniqueLeaderSuccess": true,
+    "evidence": "evidence/live/main-workflow.json"
+  },
+  "actualPortalSubmitted": false,
+  "constructorEvidenceScope": "All original root-level keys and values, including scope, are retained from the actual published deployment.json at frontend commit acecde60d5e2d2eeded280399e6029c3366f6f0f. That original scope describes the constructor evidence snapshot only. The separately timestamped liveScope and businessWorkflow below record the later Open -> Derive -> Owner confirm result.",
+  "liveUpdatedAt": "2026-10-21T18:46:20.207370+00:00",
+  "portalSubmissionSnapshotAt": "2026-10-21T18:46:20.207370+00:00"
 }
