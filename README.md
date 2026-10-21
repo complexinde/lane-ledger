@@ -1,37 +1,41 @@
 # LaneLedger
 
-LaneLedger is an AI-assisted, MIT-licensed prototype for exact minimum-lane interval partitioning. It combines commit-pinned public snapshots, deterministic lane reuse, an independent maximum-overlap witness and owner-confirmed GenLayer certificates. Inputs are synthetic abstract intervals; no real booking, identity, attendance or external work is performed.
+LaneLedger is an AI-assisted, MIT-licensed prototype for exact minimum-lane interval partitioning. GenLayer fetches exact commit-pinned synthetic intervals, derives deterministic lanes with an independent maximum-overlap witness, and records an owner-confirmed certificate. It performs no real booking, attendance or external work.
 
-## Current demonstrated state
+## Current frontend and recorded live demonstration
 
-The public application is [https://complexinde.github.io/lane-ledger/](https://complexinde.github.io/lane-ledger/). The existing Intelligent Contract is `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0` on **GenLayer Studio, chain61999**. The deployed source and revision003 frontend were verified. A recorded demonstration exercised **Open -> Derive -> Owner confirm** through the normal wallet workflow. The demonstrated record **LaneH1022A** reached **CONFIRMED, revision2**, with all three original business transactions **FINALIZED / NORMAL / MAJORITY_AGREE / unique leader SUCCESS**.
+The application is [https://complexinde.github.io/lane-ledger/](https://complexinde.github.io/lane-ledger/). The existing contract is `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0` on **GenLayer Studio, chain61999**. Current frontend revision**004** is a reviewed display/error/receipt-consistency update. Its local checks are **155 frontend tests**, **25 pinned contract SDK tests**, and TypeScript/Vite exit0. Its fresh [independent peer review](evidence/frontend-revision004/independent-review.json) is **PASS_WITHIN_REVIEWED_SCOPE**, with no outstanding Important/Critical findings in that stated scope. See [FRONTEND_REVISION_004.md](FRONTEND_REVISION_004.md), the [verification report](evidence/frontend-revision004/revision-verification.json) and [LIVE_STATUS.json](LIVE_STATUS.json) for exact source/build/peer hashes and snapshot boundaries.
 
-The certificate is `fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d`. The result uses **two lanes**: lane0 **alpha, delta, epsilon** and lane1 **beta, gamma**. At the earliest maximum-overlap tick **1**, **alpha and beta** are simultaneously active, proving a lower bound of two lanes. This matches the canonical assignment, so the demonstrated result is minimal.
+The genuine Open -> Derive -> Owner confirm demonstration was performed with frontend revision**003**, commit `acecde60d5e2d2eeded280399e6029c3366f6f0f`. Record **LaneH1022A** reached **CONFIRMED, revision2**, certificate `fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d`. All three original business transactions were FINALIZED with NORMAL consensus, MAJORITY_AGREE and one successful leader. This existing result remains valid. No new wallet main workflow or duplicate business transaction is claimed for revision004; public asset verification and a read-only check of the existing record are recorded separately.
 
-| Transition | Original transaction hash |
+The exact result uses **two lanes**: lane0 **alpha, delta, epsilon**; lane1 **beta, gamma**. **Inspect earliest maximum overlap** shows tick1 with alpha and beta, providing the matching lower bound2. Intervals are half-open `[start,end)` and use abstract ticks.
+
+| Demonstrated revision003 transition | Original transaction hash |
 | --- | --- |
-| Open | `0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47` |
-| Derive | `0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad` |
-| Owner confirm | `0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2` |
+| open_program | `0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47` |
+| derive_program | `0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad` |
+| confirm_program | `0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2` |
 
-See [LIVE_WALKTHROUGH.md](LIVE_WALKTHROUGH.md) for the three-step read-only demonstration, [LIVE_STATUS.json](LIVE_STATUS.json) for the timestamped scope, [evidence/live/main-workflow.json](evidence/live/main-workflow.json) for the workflow summary and the linked individual transaction proofs. These records contain selected public proof fields, not full node configuration or VM output.
+See [LIVE_WALKTHROUGH.md](LIVE_WALKTHROUGH.md) and [the immutable main-workflow evidence](evidence/live/main-workflow.json). Those original evidence files remain dated revision003 snapshots. Their earlier Portal submitted=false fields describe that earlier time and do not override the current submission snapshot below.
 
-## Read the demonstrated record
+## Read the confirmed record
 
-1. Open the public application. No wallet is required to read this record.
-2. Set **Actual contract address** to `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0`, **Unique record ID** to `LaneH1022A`, and click **Read record**.
-3. Expand **Loaded source, result and certificate**, verify CONFIRMED/revision2 and the certificate above, then click **Inspect earliest maximum overlap** to inspect tick1. The two-lane assignment and lower-bound witness should agree.
+1. Open the public application. A read-only visit needs no wallet connection or signature.
+2. Fill **Actual contract address** with `0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0`, set **Unique record ID** to `LaneH1022A`, and click **Read record**.
+3. Expand **Loaded source, result and certificate**; verify CONFIRMED/revision2 and the certificate above, then inspect the domain result and witness. Compare the original hashes against the immutable evidence. This walkthrough does not ask a reader to repeat a transaction.
 
-## Source and deterministic rule
+## What revision004 changes
 
-The original public fixture is [https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json](https://raw.githubusercontent.com/complexinde/lane-ledger/b86c0378d66885642ed4348c5f42fa25a640817a/profile07/projects/lane-ledger/fixtures/program.json) (373 exact bytes, SHA256 `188a307035475165d46506d1e40979d73201d672c69ca79f865125d7b82479d8`). It declares five events with integer abstract ticks. Intervals use `[start,end)`: ending releases a lane before a new interval starts. Events are processed deterministically, the lowest available lane is reused, and an independent overlap sweep produces the earliest maximum-overlap witness. Complete fresh source/result captures are compared by validators; owner confirmation binds the current derived certificate and revision.
+The public notice/trail uses a fixed UNVERIFIED diagnostic instead of echoing arbitrary provider/RPC errors. Changing record, address, account or chain clears the prior displayed public receipt; a plain read also clears it, and stale callbacks do not restore it into another context. Explicit SDK leader-receipt lists must contain exactly one successful leader: empty/validator-only lists fail closed. Independently bound raw finality/majority/leader proof remains mandatory, and missing SDK fields are not invented.
 
-The deployed contract source SHA256 remains `48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8`. The original constructor transaction is `0x8a352fbb3fbcda63f64d39dfe9d8384646217a0a51dd0dd0400048d5e42a97f1`. It is separate from the three business transactions above. [deployment.json](deployment.json) retains the constructor identity fields and records the later business workflow separately.
+Contract source, fixtures, domain algorithms, dictionary ABI, pending storage schema, exact-hash recovery, official genlayer-js1.1.8 serializer/checksum boundary and the one-shot wallet mutation gate are unchanged. Unknown submissions retain their original context/hash and must never be automatically resent. There is no wallet-warning bypass.
 
-The current frontend uses reviewed revision003, official **genlayer-js1.1.8**, checksum RPC addresses, account/chain context checks, strict original-hash receipt proof and a one-shot wallet submission gate. Its published frontend commit before this documentation batch is `acecde60d5e2d2eeded280399e6029c3366f6f0f`. Contract source, fixtures, business algorithms and compiled assets are unchanged by this documentation update.
+One nonblocking presentation limitation remains: **A previous verified receipt for the same record may remain visible if a later action becomes UNVERIFIED/unknown. That receipt is historical evidence only and does not prove the new action succeeded. The pending original context/hash still blocks replay; record/address/account/chain changes and plain reads clear the displayed prior proof.** This is not a claim that all historical proof disappears or that an unresolved new action succeeded.
 
-## Scope and status
+## Current scope and Portal snapshot
 
-This is a **single-operator synthetic prototype demonstration**. Open, Derive and Owner confirm were exercised live. Revoke is implemented and locally tested but was not exercised live; no independent users, production scheduling, adoption, funding or awards are claimed. Portal Project submission was **false at 2026-10-21T18:42:16.819132+00:00**. Portal status is a timestamped snapshot; later submission is recorded separately.
+At snapshot **2026-10-21T19:04:48.625558+00:00**, the existing LaneLedger Project submission is **Pending review**, visible ID prefix **f694c1e2**, submitted=true and accepted=false. The observed submission timestamp is `2026-10-21T19:00:29.256Z`. This update did not submit again; Pending review is not acceptance, an award or guaranteed points.
 
-Unknown wallet outcomes must retain their original transaction hash and context and must never be automatically resent. This documentation does not authorize bypassing wallet warnings. [HISTORICAL_README_PRE_LIVE.md](HISTORICAL_README_PRE_LIVE.md) preserves the exact README from the prior published frontend commit as historical evidence; its earlier deployment/live-status descriptions are superseded by the timestamped facts above.
+The demonstrated use is synthetic and operated by one wallet user. Revoke is implemented and locally tested, but was not exercised live. No independent adoption, production use, real-world identity/scheduling, funding or award is claimed. The contract source remains SHA256 `48b3a5c678ff2633a10b012f60496653c36061225f93a017e8f5ae539630bca8`; the original constructor transaction remains `0x8a352fbb3fbcda63f64d39dfe9d8384646217a0a51dd0dd0400048d5e42a97f1` and is separate from the business hashes above. [deployment.json](deployment.json) keeps the actual published constructor schema and values.
+
+[HISTORICAL_README_FRONTEND003.md](HISTORICAL_README_FRONTEND003.md) preserves the exact README from verified public commit `64d519ce6d71f21786807f55d8494802f9188450`. It is historical; the current status is the timestamped, scoped metadata above. The original public inputs and existing evidence files are unchanged by this frontend update.

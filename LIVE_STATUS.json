@@ -1,49 +1,106 @@
 {
-  "schemaVersion": 1,
-  "snapshotAt": "2026-10-21T18:42:16.819132+00:00",
+  "schemaVersion": 4,
+  "snapshotAt": "2026-10-21T19:04:48.625558+00:00",
   "project": "LaneLedger",
   "classification": "AI-assisted synthetic prototype",
-  "network": {
-    "name": "GenLayer Studio",
-    "chainId": 61999
-  },
+  "chainId": 61999,
   "contractAddress": "0xf074B35AeC1A0636DA0eA64D3e31BC3Fc2Ec2Bf0",
-  "frontend": {
-    "revision": 3,
-    "commit": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
-    "url": "https://complexinde.github.io/lane-ledger/",
-    "publicationAndServedAssetEvidence": "Root verified revision003 public source and served assets before this workflow."
+  "currentFrontend": {
+    "revision": 4,
+    "SDK": "genlayer-js@1.1.8",
+    "sourceTreeSHA256": "e7fd610fa18d5d293405ef30e6961d36deee212f3b521a3bc3b041c6aac12cf8",
+    "sourceVerificationSHA256": "6ae5e96a5fb93f1bd26481d2606cc270b7ffdda943511861f39a3060af7d40ed",
+    "distManifestSHA256": "2ebde7e805079e1c250d10d5286416455c52431c4b13c953d5adcebc49f6c728",
+    "distFiles": [
+      {
+        "repoRelativePath": "docs/assets/ccip-tvz811ng.js",
+        "bytes": 2888,
+        "sha256": "b51df4ef34c533f8e96f716ca27ebd3f5d166eb7389cc23a0cf008d926184e85"
+      },
+      {
+        "repoRelativePath": "docs/assets/index-A7Rpz5KM.js",
+        "bytes": 554552,
+        "sha256": "f6dda72032c319204fec7ec283801e2641fb18bb614d3f9d8b3b6c8103affa07"
+      },
+      {
+        "repoRelativePath": "docs/assets/index-Bys0mZ1t.css",
+        "bytes": 3461,
+        "sha256": "1143367e9028d2a03a18027d791f521b86fd72f62e3d87719acb0bbce9c0b938"
+      },
+      {
+        "repoRelativePath": "docs/index.html",
+        "bytes": 353,
+        "sha256": "c5ae200f86a136c5a67babba92a7090d2ca0d2a1d228648ea0b1c2bf9c482b93"
+      }
+    ],
+    "peerReviewStatus": "PASS_WITHIN_REVIEWED_SCOPE",
+    "peerReviewSHA256": "fa3468614d01698f2dc0141a1e5804a64e8d77b2bc2266a4b151c8dc7834f755",
+    "peerReviewPath": "evidence/frontend-revision004/independent-review.json",
+    "publicCommit": null,
+    "localChecks": {
+      "frontendTests": 155,
+      "actualContractSDKTests": 25,
+      "typescriptAndViteExitCode": 0
+    },
+    "publicByteVerification": {
+      "verified": false,
+      "snapshotAt": "2026-10-21T19:04:48.625558+00:00",
+      "note": "This records the local prepublication snapshot. Exact public-byte checks are recorded separately after the normal publication."
+    },
+    "readOnlyRecordRecheck": {
+      "verified": false,
+      "snapshotAt": "2026-10-21T19:04:48.625558+00:00"
+    },
+    "newWalletMainWorkflowRepeated": false,
+    "current004BusinessLiveFlowVerified": false
   },
-  "businessWorkflow": {
+  "demonstratedFrontendRevision": 3,
+  "demonstratedFrontendCommit3": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
+  "demonstratedWorkflow": {
     "verified": true,
+    "frontendRevision": 3,
+    "frontendCommit": "acecde60d5e2d2eeded280399e6029c3366f6f0f",
     "recordId": "LaneH1022A",
     "status": "CONFIRMED",
     "revision": 2,
     "certificate": "fb160b80a008a5ce5e818fa8ab17109eb4fcde9836d9fbe7edf3f36a1d4a956d",
-    "transactionHashes": {
-      "open": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
-      "derive": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
-      "confirm": "0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2"
-    },
-    "allThreeFinalizedNormalMajorityUniqueLeaderSuccess": true,
-    "evidence": "evidence/live/main-workflow.json"
+    "transactions": [
+      {
+        "method": "open_program",
+        "hash": "0xfe96a05bbf4f31d3c54ab68ff13f06204c5bd3cda3cdb74a6b23503ad4f94c47",
+        "evidence": "07-lane-ledger-live-open-finalized-001.json"
+      },
+      {
+        "method": "derive_program",
+        "hash": "0x790d2e69dd2a2ebb0b8bba44eb622b07521ae2f3c49ece3bd3389381a5212cad",
+        "evidence": "07-lane-ledger-live-derive-finalized-001.json"
+      },
+      {
+        "method": "confirm_program",
+        "hash": "0xc26719e75cfc844ed3eeee5aa39f45ccd45c0decf5495caa63d0b0d22aa04da2",
+        "evidence": "07-lane-ledger-live-confirm-finalized-001.json"
+      }
+    ],
+    "scope": "Open -> Derive -> Owner confirm only; synthetic inputs; one operator; no live Revoke or independent adoption.",
+    "evidence": "evidence/live/main-workflow.json",
+    "observedAt": "2026-10-21T18:40:25.428Z"
   },
-  "scope": {
-    "openDeriveOwnerConfirm": true,
-    "syntheticInputs": true,
+  "portal": {
+    "submitted": true,
+    "status": "Pending review",
+    "accepted": false,
+    "idVisiblePrefix": "f694c1e2",
+    "observedAt": "2026-10-21T19:00:29.256Z",
+    "snapshotAt": "2026-10-21T19:04:48.625558+00:00",
+    "scope": "Actual existing Project submission; not a new submission by this documentation update."
+  },
+  "actualPortalSubmitted": true,
+  "limitations": {
+    "syntheticInputsOnly": true,
     "oneOperator": true,
     "liveRevoke": false,
     "independentAdoptionClaim": false,
-    "realBookingOrExternalExecutionClaim": false
+    "sameRecordHistoricalReceiptDuringNewUnknown": "A previous verified receipt for the same record may remain visible if a later action becomes UNVERIFIED/unknown. That receipt is historical evidence only and does not prove the new action succeeded. The pending original context/hash still blocks replay; record/address/account/chain changes and plain reads clear the displayed prior proof."
   },
-  "portal": {
-    "submitted": false,
-    "snapshotAt": "2026-10-21T18:42:16.819132+00:00",
-    "note": "Public evidence publication and Portal submission are separate later root actions."
-  },
-  "thisDocumentationBatch": {
-    "publicationPerformed": false,
-    "publicEvidenceCommit": null,
-    "byteVerificationPendingAfterRootUpload": true
-  }
+  "historicalEvidencePolicy": "The original evidence/live files are immutable dated revision003 snapshots. Their earlier submitted=false values describe those earlier snapshots; the current Portal status is the dated portal object above."
 }
